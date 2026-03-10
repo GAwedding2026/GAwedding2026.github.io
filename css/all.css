@@ -1,13 +1,13 @@
 @charset "UTF-8";
-@import url(/scss/bootstrap-reboot.scss);
-@import url(/scss/bootstrap-grid.scss);
+@import url(/bootstrap/bootstrap-reboot.scss);
+@import url(/bootstrap/bootstrap-grid.scss);
 /** 字型 **/
 .logotype_en {
   font-family: "Cinzel Decorative", "Libre Caslon Display", "Italiana", sans-serif;
 }
 
 .primary-font_td {
-  font-family: "Chiron Sung HK", serif;
+  font-family: "Shippori Mincho B1", serif;
 }
 
 .primary-font_en {
@@ -146,13 +146,13 @@ img {
 }
 
 .title {
-  --min-size: 90;
+  --min-size: 80;
   --max-size: 110;
   --font-size: calc(
     (var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) *
       ((100cqw - 320px) / (1920 - 320))
   );
-  font-size: clamp(var(--min-size) * 0.8px, var(--font-size), var(--max-size) * 1px);
+  font-size: clamp(var(--min-size) * 0.75px, var(--font-size), var(--max-size) * 1px);
   line-height: clamp(var(--min-size) * 0.7px, var(--font-size), var(--max-size) * 1px);
   text-shadow: #fcf2ed 1px 1px 0px;
 }
