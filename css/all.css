@@ -89,8 +89,11 @@ img {
   width: 100%;
 }
 
-/** Section **/
-#hero .banner > img {
+/** Section_Hero **/
+#hero .banner {
+  padding-top: 5.25rem;
+}
+#hero .banner img {
   display: block;
   border-radius: 60vw 60vw 0 0;
   box-shadow: #e9d4bd 8px 8px 0px;
@@ -99,39 +102,10 @@ img {
 
 .hero-icon {
   position: relative;
-  top: 1rem;
-  right: 1rem;
+  top: 0;
+  right: 1.5rem;
   display: inline-block;
   z-index: -100;
-}
-
-#wedding img {
-  display: block;
-  margin: 0 auto;
-  width: clamp(100px, 50vw, 768px);
-}
-
-.gallery {
-  align-items: end;
-}
-.gallery .row {
-  position: relative;
-}
-.gallery .photo-background > img {
-  display: block;
-  box-shadow: #e9d4bd 8px 8px 0px;
-}
-.gallery .img-border img {
-  border: #974315 5px solid;
-  display: block;
-}
-
-#when p {
-  --min-size: 16;
-  --max-size: 24;
-  --font-size: calc(
-    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
 }
 
 .hero-title {
@@ -149,11 +123,11 @@ img {
       ((100cqw - 320px) / (1920 - 320))
   );
   font-size: clamp(var(--min-size) * 0.75px, var(--font-size), var(--max-size) * 1px);
-  line-height: clamp(var(--min-size) * 0.7px, var(--font-size), var(--max-size) * 1px);
+  line-height: clamp(var(--min-size) * 0.75px, var(--font-size), var(--max-size) * 1px);
   text-shadow: #fcf2ed 1px 1px 0px;
 }
 .title span {
-  font-size: 0.5em;
+  font-size: 0.35em;
 }
 
 @media (min-width: 768px) {
@@ -164,6 +138,52 @@ img {
 .subtitle {
   font-size: 2.5rem;
   height: 2.25rem;
+}
+
+/** Section_wedding **/
+#wedding img {
+  display: block;
+  margin: 0 auto;
+  width: clamp(100px, 50vw, 768px);
+}
+
+/** Section_gallery **/
+.gallery {
+  align-items: end;
+  --min-size: 8;
+  --max-size: 24;
+  --font-size: calc(
+    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) *
+      ((100cqw - 320px) / (1920 - 320))
+  );
+  font-size: clamp(var(--min-size) * 0.875px, var(--font-size), var(--max-size) * 1px);
+  line-height: clamp(var(--min-size) * 1.5px, var(--font-size) * 1.75px, var(--max-size) * 1px);
+}
+.gallery .row {
+  position: relative;
+}
+.gallery .photo-background img {
+  display: block;
+  box-shadow: #e9d4bd 8px 8px 0px;
+}
+.gallery .img-border img {
+  border: #974315 5px solid;
+  display: block;
+}
+
+.subhead {
+  font-size: 2rem;
+}
+
+#when {
+  padding: 3.5rem 1.5rem 0 1.5rem;
+}
+#when p {
+  --min-size: 16;
+  --max-size: 24;
+  --font-size: calc(
+    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
 }
 
 .date {
@@ -191,8 +211,16 @@ img {
   font-size: 1rem;
 }
 
+#rundown {
+  padding: 0 2rem 1.5rem 2rem;
+}
+
 .rundown-icon {
   margin: 0 auto;
+}
+
+#venue {
+  padding: 3.5rem 1.5rem 1.5rem 1.5rem;
 }
 
 .venue-name {
