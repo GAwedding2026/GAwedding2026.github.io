@@ -172,8 +172,8 @@ img {
 
 .date {
   /*字體*/
-  --min-size: 96;
-  --max-size: 100;
+  --min-size: 80;
+  --max-size: 96;
   --font-size: calc(
     (var(--min-size) * 0.25px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
   font-size: clamp(var(--min-size) * 0.8px, var(--font-size), var(--max-size) * 1px);
@@ -182,7 +182,7 @@ img {
 
 .year {
   /*字體*/
-  --min-size: 54;
+  --min-size: 48;
   --max-size: 64;
   --font-size: calc(
     (var(--min-size) * 0.25px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
@@ -190,10 +190,10 @@ img {
 }
 
 .time {
-  font-size: calc(2rem + 1.25vw);
+  font-size: calc(1.75rem + 1.25vw);
 }
 .time span {
-  font-size: 1.375rem;
+  font-size: 0.5eem;
 }
 .time {
   line-height: 2rem;
