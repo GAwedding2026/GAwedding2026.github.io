@@ -5,12 +5,18 @@
 .logotype_en {  font-family: "Cinzel Decorative", "Libre Caslon Display", "Italiana", sans-serif;}
 // <weight>: Use a value from 200 to 900
 // <uniquifier>: Use a unique and descriptive class name
+
 .primary-font_td {  font-family: "Shippori Mincho B1", serif;}
+
 .primary-font_en {  font-family: "Garamond", "Georgia", "Times New Roman", Times, serif;}
+
 .secondary-font_en {  font-family: "Monsieur La Doulaise", "Apple Chancery", cursive, serif;}
 
+/** 字體大小 **/
 .fs-7{font-size: 0.875rem;}
+
 .fs-8{font-size: 0.75rem;}
+
 .fs-9{font-size: 0.5rem;}
 
 /** Color **/
@@ -20,28 +26,28 @@ $secondary-color:  #778899;
 $background-color: #fcf2ed;
 $text-color:       #9a875f;
 
-#hero, .name, .date, .year, .venue-name {  color: $primary-color;}
+#hero, .name, .date, .year, .venue-name, p {  color: $primary-color;}
+
 .subhead, #rundown, #wedding p {  color: $secondary-color;}
-p { color: $primary-color;}
+
 .bg-color { background-color: $background-color;}
-.text-color{
-  color: $text-color;
-}
+
+.text-color{ color: $text-color;}
 
 /*排版*/
 .pt-6 {  padding-top: 4rem;}
 .pt-7 {  padding-top: 6rem;}
 .pt-8 {  padding-top: 7.875rem;}
 .pt-9 {  padding-top: 8.5rem;}
+
 .pb-6 {  padding-bottom: 4rem;}
 .pb-7 {  padding-bottom: 6rem;}
 .pb-8 {  padding-bottom: 8rem;}
 .pb-9 {  padding-bottom: 9rem;}
 
-.mt-6{margin-top: 6rem;
-}
+.mt-6{ margin-top: 6rem;}
 
-img{width: 100%;} 
+img{ width: 100%;} 
 
 /** Section **/
 #hero {
@@ -52,13 +58,15 @@ img{width: 100%;}
     z-index: -99;
   }
 }
+
 .hero-icon{
   position: relative;
-  top:2.875rem;
+  top: 1rem;
   right: 1rem;
   display: inline-block;
   z-index: -100;
 }
+
 #wedding {
   img {
     display: block;
@@ -69,7 +77,7 @@ img{width: 100%;}
 
 .gallery {
   align-items: end;
-  .row{position: relative;}
+  .row{ position: relative;}
   .photo-background>img{
     display: block;
     box-shadow: #e9d4bd 8px 8px 0px;
@@ -84,7 +92,7 @@ img{width: 100%;}
 
 #when{
   p{
-    /*字體*/
+  //字體
   --min-size: 16;
   --max-size: 24;
   --font-size: calc(
@@ -92,12 +100,14 @@ img{width: 100%;}
   font-size: clamp(  var(--min-size) * 1px,  var(--font-size),  var(--max-size) * 1px);  
   }
 }
+
 .hero-title{
   // 定位
     position: absolute;
     top: 4vh;
     max-width: fit-content;
-  }
+}
+
 .title {
   --min-size: 80;
   --max-size: 110;
@@ -116,12 +126,9 @@ img{width: 100%;}
     var(--max-size) * 1px
   );
   text-shadow: #fcf2ed 1px 1px 0px;
-  
-  span {
-    font-size: 0.5em;
-  }
-  
+  span {  font-size: 0.5em;}
 }
+
 @media (min-width: 768px) {
   .title {
     position: static;
@@ -134,40 +141,40 @@ img{width: 100%;}
 }
 
 
-.date{
-  /*字體*/
-  --min-size: 96;
-  --max-size: 100;
+.date {
+  //字體
+  --min-size: 64;
+  --max-size: 96;
   --font-size: calc(
     (var(--min-size) * 0.25px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
   font-size: clamp(  var(--min-size) * 0.8px,  var(--font-size),  var(--max-size) * 1px);  
   line-height:calc(
     (var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
 }
+
 .year{
- /*字體*/
-  --min-size: 54;
-  --max-size: 64;
+ //字體
+  --min-size: 32;
+  --max-size: 54;
   --font-size: calc(
     (var(--min-size) * 0.25px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
   font-size: clamp(  var(--min-size) * 0.8px,  var(--font-size),  var(--max-size) * 1px);
 }
 
 .time {
-  font-size: calc(2rem + 1.25vw);
-  span{ font-size: 1.375rem;}
+  font-size: calc(1.5rem + 1.25vw);
   line-height: 2rem;
-}
-.rundown-icon{
-  margin: 0 auto;
+  span{ font-size: 1rem;}
 }
 
+.rundown-icon{  margin: 0 auto;}
+
 .venue-name{
-   /*字體*/
+  //字體
   --min-size: 42;
   --max-size: 64;
   --font-size: calc(
     (var(--min-size) * 0.25px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
   font-size: clamp(  var(--min-size) * 0.8px,  var(--font-size),  var(--max-size) * 1px);  
- p{margin-bottom: 0;}
+  p{  margin-bottom: 0;}
 }
