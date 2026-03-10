@@ -102,7 +102,7 @@ img {
 
 .hero-icon {
   position: relative;
-  top: 2.5rem;
+  top: 2rem;
   right: 1rem;
   display: inline-block;
   z-index: -100;
@@ -182,8 +182,8 @@ img {
 
 .year {
   /*字體*/
-  --min-size: 48;
-  --max-size: 64;
+  --min-size: 32;
+  --max-size: 54;
   --font-size: calc(
     (var(--min-size) * 0.25px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
   font-size: clamp(var(--min-size) * 0.8px, var(--font-size), var(--max-size) * 1px);
@@ -193,7 +193,7 @@ img {
   font-size: calc(1.75rem + 1.25vw);
 }
 .time span {
-  font-size: 0.5eem;
+  font-size: 0.5em;
 }
 .time {
   line-height: 2rem;
