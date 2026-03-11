@@ -1,6 +1,7 @@
 @import url(/bootstrap/bootstrap-reboot.scss);
 @import url(/bootstrap/bootstrap-grid.scss);
 
+
 /** 字型 **/
 .logotype_en {  font-family: "Cinzel Decorative", "Libre Caslon Display", "Italiana", sans-serif;}
 // <weight>: Use a value from 200 to 900
@@ -47,12 +48,14 @@ $text-color:       #9a875f;
 
 .mt-6{ margin-top: 6rem;}
 
+
 img{ width: 100%;} 
 
 /** Section_Hero **/
 #hero {
   .banner{
     padding-top: 5.25rem;
+    width: 100%;
     img {
     display: block;
     border-radius: 60vw 60vw 0 0;
@@ -66,35 +69,30 @@ img{ width: 100%;}
   position: relative;
   top: 0;
   right: 1.5rem;
-  display: inline-block;
   z-index: -100;
+  flex: 1 1 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .hero-title{
   // 定位
+    display: flex;
     position: absolute;
     top: 4vh;
-    max-width: fit-content;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .title {
-  --min-size: 80;
-  --max-size: 110;
-  --font-size: calc(
-    (var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) *
-      ((100cqw - 320px) / (1920 - 320))
-  );
-  font-size: clamp(
-    var(--min-size) * 0.75px,
-    var(--font-size),
-    var(--max-size) * 1px
-  );
-  line-height: clamp(
-    var(--min-size) * 0.75px,
-    var(--font-size),
-    var(--max-size) * 1px
-  );
-  text-shadow: #fcf2ed 1px 1px 0px;
+    width: -moz-fit-content;
+    --min-size: 80;
+    --max-size: 100;
+    --font-size: calc((var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((80cqw - 320px) / (1920 - 320)));
+    font-size: clamp(var(--min-size) * 0.7px, var(--font-size), var(--max-size) * 1px);
+    line-height: clamp(var(--min-size) * 0.7px, var(--font-size), var(--max-size) * 1px);
+    text-shadow: #fcf2ed 1px 1px 0px;
+    flex: 2 0 0;
   span {  font-size: 0.35em;}
 }
 
