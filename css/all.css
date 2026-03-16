@@ -20,19 +20,19 @@
 
 /** 字體大小 **/
 .fs-7 {
-  font-size: 0.875rem;
+  font-size: 0.45em;
 }
 
 .fs-8 {
-  font-size: 0.75rem;
+  font-size: 0.75em;
 }
 
 .fs-9 {
-  font-size: 0.5rem;
+  font-size: 1.125em;
 }
 
 /** Color **/
-#hero, .name, .date, .year, .venue-name, p {
+#hero, .name, .host, .date, .year, .venue-name, p {
   color: #974315;
 }
 
@@ -164,16 +164,44 @@ img {
 #wedding img {
   display: block;
   margin: 0 auto;
-  width: clamp(250px, 40vw, 400px);
+  width: clamp(250px, 40vw, 350px);
+}
+
+.subhead {
+  --min-size: 28;
+  --max-size: 42;
+  --font-size: calc(
+    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+}
+
+.name {
+  font-size: 1.5rem;
+}
+
+.host {
+  --min-size: 16;
+  --max-size: 24;
+  --font-size: calc(
+    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+}
+
+#wedding p {
+  --min-size: 14;
+  --max-size: 24;
+  --font-size: calc(
+    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
 }
 
 /** Section_gallery **/
 .gallery {
   align-items: end;
-  --min-size: 8;
-  --max-size: 24;
+  --min-size: 12;
+  --max-size: 20;
   --font-size: calc(
-    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) *
+    (var(--min-size) * 0.875px) + (var(--max-size) - var(--min-size)) *
       ((100cqw - 320px) / (1920 - 320))
   );
   font-size: clamp(var(--min-size) * 0.875px, var(--font-size), var(--max-size) * 1px);
@@ -191,10 +219,6 @@ img {
   display: block;
 }
 
-.subhead {
-  font-size: 2rem;
-}
-
 #when {
   padding: 3.5rem 1.5rem 0 1.5rem;
 }
@@ -207,36 +231,32 @@ img {
 }
 
 .date {
-  --min-size: 64;
-  --max-size: 96;
+  --min-size: 48;
+  --max-size: 100;
   --font-size: calc(
-    (var(--min-size) * 0.25px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 0.8px, var(--font-size), var(--max-size) * 1px);
+    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+  font-size: clamp(var(--min-size) * 0.75px, var(--font-size), var(--max-size) * 1.25px);
   line-height: calc(var(--min-size) * 0.5px + (var(--max-size) - var(--min-size)) * (100cqw - 320px) / 1600);
 }
 
 .year {
-  --min-size: 32;
-  --max-size: 54;
+  --min-size: 24;
+  --max-size: 96;
   --font-size: calc(
-    (var(--min-size) * 0.25px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 0.8px, var(--font-size), var(--max-size) * 1px);
-}
-
-.time {
-  font-size: calc(1.5rem + 1.25vw);
-  line-height: 2rem;
-}
-.time span {
-  font-size: 1rem;
-}
-
-#rundown {
-  padding: 0 2rem 1.5rem 2rem;
+    (var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1.5px);
 }
 
 .rundown-icon {
   margin: 0 auto;
+}
+
+.site {
+  font-size: clamp(0.875rem, 0.875rem + 0.5vw, 1.5rem);
+}
+
+.activity {
+  font-size: clamp(1rem, 1rem + 0.5vw, 2.5rem);
 }
 
 #venue {
@@ -245,13 +265,17 @@ img {
 
 .venue-name {
   --min-size: 42;
-  --max-size: 64;
+  --max-size: 120;
   --font-size: calc(
     (var(--min-size) * 0.25px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 0.8px, var(--font-size), var(--max-size) * 1px);
+  font-size: clamp(var(--min-size) * 0.8px, var(--font-size), var(--max-size) * 1.5px);
 }
 .venue-name p {
   margin-bottom: 0;
+}
+
+.map {
+  width: clamp;
 }
 
 @media (min-width: 768px) {
@@ -300,5 +324,60 @@ img {
   .decotext {
     text-align: left;
     align-self: end;
+  }
+  .name {
+    font-size: 2.5rem;
+  }
+  .host {
+    font-size: 1.5rem;
+  }
+  .calendar {
+    width: 50%;
+    margin: 0 auto;
+  }
+  #rundown {
+    padding: 2rem 0;
+  }
+  #rundown .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  #rundown .row .col-md-12 {
+    display: flex;
+    flex-direction: row;
+    padding: 1.5rem 0;
+  }
+  .rundown-icon {
+    width: 65%;
+  }
+  .time {
+    font-size: 2rem;
+    line-height: 1rem;
+  }
+  .time span {
+    font-size: 0.5em;
+  }
+  .time {
+    padding: 1.25rem 0 0 0;
+  }
+  .site {
+    font-size: clamp(1rem, 1rem + 0.5vw, 1.2rem);
+  }
+  .activity {
+    font-size: clamp(1rem, 1rem + 1.25vw, 1.5rem);
+  }
+  .venue-name {
+    --min-size: 36;
+    --max-size: 90;
+    --font-size: calc(
+      (var(--min-size) * 0.25px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+    font-size: clamp(var(--min-size) * 0.8px, var(--font-size), var(--max-size) * 1.5px);
+  }
+  .venue-name p {
+    margin-bottom: 0;
+  }
+  .map {
+    width: 100%;
   }
 }/*# sourceMappingURL=all.css.map */
