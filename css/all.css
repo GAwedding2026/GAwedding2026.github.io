@@ -166,6 +166,13 @@ img {
   margin: 0 auto;
   width: clamp(250px, 40vw, 350px);
 }
+#wedding p {
+  --min-size: 14;
+  --max-size: 20;
+  --font-size: calc(
+    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 0.875px);
+}
 
 .subhead {
   --min-size: 28;
@@ -187,16 +194,9 @@ img {
   font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
 }
 
-#wedding p {
-  --min-size: 14;
-  --max-size: 24;
-  --font-size: calc(
-    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
-}
-
 /** Section_gallery **/
 .gallery {
+  padding: 4rem 1.5rem 4rem 1.5rem;
   align-items: end;
   --min-size: 12;
   --max-size: 20;
@@ -220,7 +220,7 @@ img {
 }
 
 #when {
-  padding: 3.5rem 1.5rem 0 1.5rem;
+  padding: 3.5rem 1.5rem 4rem 1.5rem;
 }
 #when p {
   --min-size: 16;
@@ -232,7 +232,7 @@ img {
 
 .date {
   --min-size: 48;
-  --max-size: 100;
+  --max-size: 80;
   --font-size: calc(
     (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
   font-size: clamp(var(--min-size) * 0.75px, var(--font-size), var(--max-size) * 1.25px);
@@ -241,7 +241,7 @@ img {
 
 .year {
   --min-size: 24;
-  --max-size: 96;
+  --max-size: 60;
   --font-size: calc(
     (var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
   font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1.5px);
@@ -260,7 +260,7 @@ img {
 }
 
 #venue {
-  padding: 3.5rem 1.5rem 1.5rem 1.5rem;
+  padding: 3.5rem 1.5rem 0 1.5rem;
 }
 
 .venue-name {
@@ -300,8 +300,8 @@ img {
   }
   .title {
     width: -moz-fit-content;
-    --min-size: 120;
-    --max-size: 160;
+    --min-size: 100;
+    --max-size: 150;
     --font-size: calc((var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((80cqw - 320px) / (1920 - 320)));
     font-size: clamp(var(--min-size) * 0.7px, var(--font-size), var(--max-size) * 5px);
     line-height: clamp(var(--min-size) * 0.1px, var(--font-size), var(--max-size) * 0.35px);
@@ -326,7 +326,7 @@ img {
     align-self: end;
   }
   .name {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .host {
     font-size: 1.5rem;
@@ -368,8 +368,8 @@ img {
     font-size: clamp(1rem, 1rem + 1.25vw, 1.5rem);
   }
   .venue-name {
-    --min-size: 36;
-    --max-size: 90;
+    --min-size: 28;
+    --max-size: 60;
     --font-size: calc(
       (var(--min-size) * 0.25px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
     font-size: clamp(var(--min-size) * 0.8px, var(--font-size), var(--max-size) * 1.5px);
