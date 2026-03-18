@@ -315,9 +315,15 @@ img {
   border: #974315 5px solid;
   display: block;
 }
+<<<<<<< HEAD
 .gallery .primary-font_td {
   font-size: 0.85em;
 }
+=======
+.gallery .primary-font_td{
+  font-size:0.85em;}
+
+>>>>>>> b9aeea2bf652097185e5f0cbe0d3103741711b01
 
 #when {
   padding: 3.5rem 1.5rem 4rem 1.5rem;
