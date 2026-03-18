@@ -4,20 +4,13 @@
 
 /** 字型 **/
 .logotype_en {  font-family: "Cinzel Decorative", "Libre Caslon Display", "Italiana", sans-serif;}
-// <weight>: Use a value from 200 to 900
-// <uniquifier>: Use a unique and descriptive class name
-
 .primary-font_td {  font-family: "Shippori Mincho B1", serif;}
-
 .primary-font_en {  font-family: "Garamond", "Georgia", "Times New Roman", Times, serif;}
-
 .secondary-font_en {  font-family: "Monsieur La Doulaise", "Apple Chancery", cursive, serif;}
 
 /** 字體大小 **/
 .fs-7{font-size: 0.45em;}
-
 .fs-8{font-size: 0.75em;}
-
 .fs-9{font-size: 1.125em;}
 
 /** Color **/
@@ -29,7 +22,7 @@ $text-color:       #9a875f;
 
 #hero, .name, .host, .date, .year, .venue-name, p {  color: $primary-color;}
 
-.subhead, #rundown, #wedding p {  color: $secondary-color;}
+.newlywed-subhead, #rundown, #wedding p {  color: $secondary-color;}
 
 .bg-color { background-color: $background-color;}
 
@@ -55,34 +48,26 @@ $text-color:       #9a875f;
 
 .mt-6{ margin-top: 6rem;}
 
-
 img{ width: 100%;} 
 
 /** Section_Hero **/
 #hero {
+  padding: 1.5rem;
   .banner{
     padding-top: 5.25rem;
     img {
     display: block;
     border-radius: 60vw 60vw 0 0;
     box-shadow: #e9d4bd 8px 8px 0px;
-    z-index: -99;
     }
   }
 }
 
-.hero-icon{
-  position: relative;
-  top: 0;
-  right: 1.5rem;
-  z-index: -100;
-  flex: 1 1 0;
-  padding-left: 0;
-  padding-right: 0;
+.hero-title{  
+  padding-top: 1rem;
 }
 
-.hero-title{
-  // 定位
+.hero-title_heading {
     display: flex;
     position: absolute;
     top: 4vh;
@@ -90,8 +75,7 @@ img{ width: 100%;}
     margin-right: 0;
 }
 
-.title {
-    width: -moz-fit-content;
+.heading {
     --min-size: 80;
     --max-size: 120;
     --font-size: calc((var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((80cqw - 320px) / (1920 - 320)));
@@ -102,38 +86,124 @@ img{ width: 100%;}
   span {  font-size: 0.35em;}
 }
 
-
-.subtitle {
-  width: -moz-fit-content;
+.hero-icon{
+  position: relative;
+  right: 1rem;
+  z-index: -100;
+  flex: 1 1 0;
+}
+.hero-subheading{
   --min-size: 25;
   --max-size: 100;
   --font-size: calc((var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
-  line-height: clamp(var(--min-size) * 1.75px, var(--font-size), var(--max-size) * 2px);
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 0.4px);
+  line-height: clamp(var(--min-size) * 1.75px, var(--font-size), var(--max-size) * 0.25px);
+  text-align: center;
+}
+.hero-subheading_main-md{
+  display: none;
+}
+
+.legend{
   text-align: center;
 }
 
-.decotext{
-  text-align: center;
+@media (min-width: 768px){
+  #hero {
+    .banner{
+      padding-top: 1rem;
+      img {
+      display: block;
+      border-radius: 60vw 60vw 0 0;
+      box-shadow: #e9d4bd 8px 8px 0px;
+      z-index: -99;
+      }
+    }
+  }
+  .hero-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+  }
+  .hero-title_heading{
+  // 定位
+  position: absolute;
+  top: 8vh;
+  }
+  .heading {
+    --min-size: 100;
+    --max-size: 150;
+    --font-size: calc((var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((80cqw - 320px) / (1920 - 320)));
+    font-size: clamp(var(--min-size) * 0.7px, var(--font-size), var(--max-size) * 5px);
+    line-height: clamp(var(--min-size) * 0.1px, var(--font-size), var(--max-size) * 0.35px);
+    text-shadow: #fcf2ed 1px 1px 0px;
+    flex: 3 0 0;
+  }
+  .hero-icon{
+    display: none;
+  }
+  .hero-subheading{
+    position: absolute;
+    bottom: 0;
+  }
+  .hero-subheading_main {
+    display: none;
+  }
+  .hero-subheading_main-md{
+  display: block;
+  // --min-size: 32;
+  // --max-size: 56;
+  // --font-size: calc((var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+  // font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 0.7px);
+  height: auto;
+  text-align: left;
+  align-self: end;
 }
+
+  .legend{
+    text-align: left;
+    align-self: end;
+    --min-size: 20;
+    --max-size: 56;
+    --font-size: calc((var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+    font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 0.55px);
+  }
+}
+
+
+
+
+
 
 /** Section_wedding **/
 #wedding {
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
   img {
     display: block;
     margin: 0 auto;
     width: clamp(250px, 40vw , 350px );
   }
-  p{
-    --min-size: 14;
-    --max-size: 20;
-    --font-size: calc(
-      (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-    font-size: clamp(  var(--min-size) * 1px,  var(--font-size),  var(--max-size) * 0.875px);
+  .caption{
+    padding: 0.75rem;
+    p{ 
+      margin-bottom: 0;
+      --min-size: 14;
+      --max-size: 20;
+      --font-size: calc(
+        (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+      font-size: clamp(  var(--min-size) * 1px,  var(--font-size),  var(--max-size) * 0.875px);
+    }
+    span{ 
+      padding: 1rem 1rem 0 1rem;
+      font-size: 0.875em;}
   }
 }
+.newlywed{
+  padding: 0 0 0.75rem 0;
+}
 
-.subhead{
+.newlywed-subhead{
   --min-size: 28;
   --max-size: 42;
   --font-size: calc(
@@ -141,20 +211,42 @@ img{ width: 100%;}
   font-size: clamp(  var(--min-size) * 1px,  var(--font-size),  var(--max-size) * 1px);
 }
 .name{
-  font-size: 1.5rem;
+  --min-size: 21;
+  --max-size: 48;
+  --font-size: calc(
+    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+  font-size: clamp(  var(--min-size) * 1px,  var(--font-size),  var(--max-size) * 1px);
   }
 .host{
-  --min-size: 16;
+  --min-size: 15;
   --max-size: 24;
   --font-size: calc(
     (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
   font-size: clamp(  var(--min-size) * 1px,  var(--font-size),  var(--max-size) * 1px);
 }
 
+.caption{
+  padding: 0.75rem;
+  p{ margin-bottom: 0;}
+  span{ 
+    padding: 1rem 1rem 0 1rem;
+    font-size: 0.875em;}
+}
+
+
+@media (min-width: 768px){
+  .name{
+    font-size: 2rem;
+  }
+  .host{
+    font-size: 1.5rem;
+  }
+}
+
 
 /** Section_gallery **/
 .gallery {
-  padding: 4rem 1.5rem 4rem 1.5rem;
+  padding: 1.5rem;
   align-items: end;
   --min-size: 12;
   --max-size: 20;
@@ -185,6 +277,8 @@ img{ width: 100%;}
     display: block;
     }
   }
+  .primary-font_td{
+  font-size:0.85em;}
 }
 
 
@@ -250,62 +344,6 @@ img{ width: 100%;}
 
 
 @media (min-width: 768px){
-  #hero {
-    .banner{
-      padding-top: 1rem;
-      img {
-      display: block;
-      border-radius: 60vw 60vw 0 0;
-      box-shadow: #e9d4bd 8px 8px 0px;
-      z-index: -99;
-      }
-    }
-  }
-  .hero-text{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    position: relative;
-  }
-  .hero-title{
-  // 定位
-  position: absolute;
-  top: 8vh;
-  }
-  .title {
-    width: -moz-fit-content;
-    --min-size: 100;
-    --max-size: 150;
-    --font-size: calc((var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((80cqw - 320px) / (1920 - 320)));
-    font-size: clamp(var(--min-size) * 0.7px, var(--font-size), var(--max-size) * 5px);
-    line-height: clamp(var(--min-size) * 0.1px, var(--font-size), var(--max-size) * 0.35px);
-    text-shadow: #fcf2ed 1px 1px 0px;
-    flex: 3 0 0;
-  }
-  .hero-icon{
-    display: none;
-  }
-  .hero-subtitle{
-    position: absolute;
-    bottom: 0;
-  }
-  .subtitle {
-    font-size: 2.5rem;
-    height: auto;
-    text-align: left;
-    align-self: end;
-  }
-  .decotext{
-    text-align: left;
-
-    align-self: end;
-  }
-  .name{
-    font-size: 2rem;
-  }
-  .host{
-    font-size: 1.5rem;
-  }
   .calendar{
     width: 50%;
     margin: 0 auto;

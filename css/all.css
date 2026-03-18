@@ -36,7 +36,7 @@
   color: #974315;
 }
 
-.subhead, #rundown, #wedding p {
+.newlywed-subhead, #rundown, #wedding p {
   color: #778899;
 }
 
@@ -104,6 +104,9 @@ img {
 }
 
 /** Section_Hero **/
+#hero {
+  padding: 1.5rem;
+}
 #hero .banner {
   padding-top: 5.25rem;
 }
@@ -111,20 +114,13 @@ img {
   display: block;
   border-radius: 60vw 60vw 0 0;
   box-shadow: #e9d4bd 8px 8px 0px;
-  z-index: -99;
-}
-
-.hero-icon {
-  position: relative;
-  top: 0;
-  right: 1.5rem;
-  z-index: -100;
-  flex: 1 1 0;
-  padding-left: 0;
-  padding-right: 0;
 }
 
 .hero-title {
+  padding-top: 1rem;
+}
+
+.hero-title_heading {
   display: flex;
   position: absolute;
   top: 4vh;
@@ -132,8 +128,7 @@ img {
   margin-right: 0;
 }
 
-.title {
-  width: -moz-fit-content;
+.heading {
   --min-size: 80;
   --max-size: 120;
   --font-size: calc((var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((80cqw - 320px) / (1920 - 320)));
@@ -142,39 +137,118 @@ img {
   text-shadow: #fcf2ed 1px 1px 0px;
   flex: 3 0 0;
 }
-.title span {
+.heading span {
   font-size: 0.35em;
 }
 
-.subtitle {
-  width: -moz-fit-content;
+.hero-icon {
+  position: relative;
+  right: 1rem;
+  z-index: -100;
+  flex: 1 1 0;
+}
+
+.hero-subheading {
   --min-size: 25;
   --max-size: 100;
   --font-size: calc((var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
-  line-height: clamp(var(--min-size) * 1.75px, var(--font-size), var(--max-size) * 2px);
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 0.4px);
+  line-height: clamp(var(--min-size) * 1.75px, var(--font-size), var(--max-size) * 0.25px);
   text-align: center;
 }
 
-.decotext {
+.hero-subheading_main-md {
+  display: none;
+}
+
+.legend {
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  #hero .banner {
+    padding-top: 1rem;
+  }
+  #hero .banner img {
+    display: block;
+    border-radius: 60vw 60vw 0 0;
+    box-shadow: #e9d4bd 8px 8px 0px;
+    z-index: -99;
+  }
+  .hero-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+  }
+  .hero-title_heading {
+    position: absolute;
+    top: 8vh;
+  }
+  .heading {
+    --min-size: 100;
+    --max-size: 150;
+    --font-size: calc((var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((80cqw - 320px) / (1920 - 320)));
+    font-size: clamp(var(--min-size) * 0.7px, var(--font-size), var(--max-size) * 5px);
+    line-height: clamp(var(--min-size) * 0.1px, var(--font-size), var(--max-size) * 0.35px);
+    text-shadow: #fcf2ed 1px 1px 0px;
+    flex: 3 0 0;
+  }
+  .hero-icon {
+    display: none;
+  }
+  .hero-subheading {
+    position: absolute;
+    bottom: 0;
+  }
+  .hero-subheading_main {
+    display: none;
+  }
+  .hero-subheading_main-md {
+    display: block;
+    height: auto;
+    text-align: left;
+    align-self: end;
+  }
+  .legend {
+    text-align: left;
+    align-self: end;
+    --min-size: 20;
+    --max-size: 56;
+    --font-size: calc((var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+    font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 0.55px);
+  }
+}
 /** Section_wedding **/
+#wedding {
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+}
 #wedding img {
   display: block;
   margin: 0 auto;
   width: clamp(250px, 40vw, 350px);
 }
-#wedding p {
+#wedding .caption {
+  padding: 0.75rem;
+}
+#wedding .caption p {
+  margin-bottom: 0;
   --min-size: 14;
   --max-size: 20;
   --font-size: calc(
     (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
   font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 0.875px);
 }
+#wedding .caption span {
+  padding: 1rem 1rem 0 1rem;
+  font-size: 0.875em;
+}
 
-.subhead {
+.newlywed {
+  padding: 0 0 0.75rem 0;
+}
+
+.newlywed-subhead {
   --min-size: 28;
   --max-size: 42;
   --font-size: calc(
@@ -183,20 +257,43 @@ img {
 }
 
 .name {
-  font-size: 1.5rem;
+  --min-size: 21;
+  --max-size: 48;
+  --font-size: calc(
+    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
 }
 
 .host {
-  --min-size: 16;
+  --min-size: 15;
   --max-size: 24;
   --font-size: calc(
     (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
   font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
 }
 
+.caption {
+  padding: 0.75rem;
+}
+.caption p {
+  margin-bottom: 0;
+}
+.caption span {
+  padding: 1rem 1rem 0 1rem;
+  font-size: 0.875em;
+}
+
+@media (min-width: 768px) {
+  .name {
+    font-size: 2rem;
+  }
+  .host {
+    font-size: 1.5rem;
+  }
+}
 /** Section_gallery **/
 .gallery {
-  padding: 4rem 1.5rem 4rem 1.5rem;
+  padding: 1.5rem;
   align-items: end;
   --min-size: 12;
   --max-size: 20;
@@ -217,6 +314,9 @@ img {
 .gallery .img-border img {
   border: #974315 5px solid;
   display: block;
+}
+.gallery .primary-font_td {
+  font-size: 0.85em;
 }
 
 #when {
@@ -290,58 +390,6 @@ img {
 }
 
 @media (min-width: 768px) {
-  #hero .banner {
-    padding-top: 1rem;
-  }
-  #hero .banner img {
-    display: block;
-    border-radius: 60vw 60vw 0 0;
-    box-shadow: #e9d4bd 8px 8px 0px;
-    z-index: -99;
-  }
-  .hero-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    position: relative;
-  }
-  .hero-title {
-    position: absolute;
-    top: 8vh;
-  }
-  .title {
-    width: -moz-fit-content;
-    --min-size: 100;
-    --max-size: 150;
-    --font-size: calc((var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((80cqw - 320px) / (1920 - 320)));
-    font-size: clamp(var(--min-size) * 0.7px, var(--font-size), var(--max-size) * 5px);
-    line-height: clamp(var(--min-size) * 0.1px, var(--font-size), var(--max-size) * 0.35px);
-    text-shadow: #fcf2ed 1px 1px 0px;
-    flex: 3 0 0;
-  }
-  .hero-icon {
-    display: none;
-  }
-  .hero-subtitle {
-    position: absolute;
-    bottom: 0;
-  }
-  .subtitle {
-    font-size: 2.5rem;
-    height: auto;
-    text-align: left;
-    align-self: end;
-  }
-  .decotext {
-    text-align: left;
-    align-self: end;
-  }
-  .name {
-    font-size: 2rem;
-  }
-  .host {
-    font-size: 1.5rem;
-  }
   .calendar {
     width: 50%;
     margin: 0 auto;
