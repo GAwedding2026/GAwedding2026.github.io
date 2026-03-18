@@ -9,6 +9,36 @@
 .secondary-font_en {  font-family: "Monsieur La Doulaise", "Apple Chancery", cursive, serif;}
 
 /** 字體大小 **/
+:root{
+  // 設定縮放基準：從320px(iphone)到1440px(desktop)
+  --min-vw: 320;
+  --max-view: 1440;
+
+  // 計算比例的因子，勿動！！
+  --fluid-calc: calc((100vw - var(--min-vw) * 1px) / (var(--max-view) - var(--min-vw)));
+
+  // 定義級距(手機px, 電腦px)
+  // 頁首標題
+  --fs-h1: clamp(56px, 56px + (80 - 56) * var(--fluid-calc), 80px);
+  --fs-display: clamp(25px, 25px + (42 - 25) * var(--fluid-calc), 42px);
+  --fs-h2: clamp(24px, 24px + (36 - 24) * var(--fluid-calc), 36px);
+  // 內文基礎字級
+  --fs-p: clamp(16px, 16px + (32 - 16) * var(--fluid-calc), 32px);
+  --fs-sm: clamp(14px, 14px + (20 - 12) * var(--fluid-calc), 20px);
+  // 內文縮放倍率
+  --ratio-step--4: 0.65;
+  --ratio-step--3: 0.75;
+  --ratio-step--2: 0.875;
+  --ratio-step--1: 0.875;
+  --ratio-step-0: 1.125;
+  --ratio-step-1: 1.25;
+  --ratio-step-2: 1.3;
+  --ratio-step-3: 1.5;
+  --ratio-step-4: 1.75;
+  --ratio-step-5: 2;
+}
+
+
 .fs-7{font-size: 0.45em;}
 .fs-8{font-size: 0.75em;}
 .fs-9{font-size: 1.125em;}
@@ -22,11 +52,11 @@ $text-color:       #9a875f;
 
 #hero, .name, .host, .date, .year, .venue-name, p {  color: $primary-color;}
 
-.newlywed-subhead, #rundown, #wedding p {  color: $secondary-color;}
+h2, #wedding p, #rundown {  color: $secondary-color;}
 
 .bg-color { background-color: $background-color;}
 
-.text-color{ color: $text-color;}
+.gallery p{ color: $text-color;}
 
 /*排版*/
 .container{ max-width: 500px;}
@@ -54,7 +84,7 @@ img{ width: 100%;}
 #hero {
   padding: 1.5rem;
   .banner{
-    padding-top: 5.25rem;
+    padding-top: 5.875rem;
     img {
     display: block;
     border-radius: 60vw 60vw 0 0;
@@ -62,28 +92,26 @@ img{ width: 100%;}
     }
   }
 }
-
 .hero-title{  
   padding-top: 1rem;
 }
 
 .hero-title_heading {
-    display: flex;
-    position: absolute;
-    top: 4vh;
-    margin-left: 0;
-    margin-right: 0;
+  display: flex;
+  position: absolute;
+  top:  26px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.heading {
-    --min-size: 80;
-    --max-size: 120;
-    --font-size: calc((var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((80cqw - 320px) / (1920 - 320)));
-    font-size: clamp(var(--min-size) * 0.7px, var(--font-size), var(--max-size) * 5px);
-    line-height: clamp(var(--min-size) * 0.7px, var(--font-size), var(--max-size) * 1px);
+h1.heading {
+    font-size: var(--fs-h1);
+    line-height: 1;
     text-shadow: #fcf2ed 1px 1px 0px;
     flex: 3 0 0;
-  span {  font-size: 0.35em;}
+  span {  
+    font-size: 0.35em;
+  }
 }
 
 .hero-icon{
@@ -93,11 +121,8 @@ img{ width: 100%;}
   flex: 1 1 0;
 }
 .hero-subheading{
-  --min-size: 25;
-  --max-size: 100;
-  --font-size: calc((var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 0.4px);
-  line-height: clamp(var(--min-size) * 1.75px, var(--font-size), var(--max-size) * 0.25px);
+  font-size: var(--fs-display);
+  line-height: 1.4;
   text-align: center;
 }
 .hero-subheading_main-md{
@@ -131,15 +156,9 @@ img{ width: 100%;}
   position: absolute;
   top: 8vh;
   }
-  .heading {
-    --min-size: 100;
-    --max-size: 150;
-    --font-size: calc((var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((80cqw - 320px) / (1920 - 320)));
-    font-size: clamp(var(--min-size) * 0.7px, var(--font-size), var(--max-size) * 5px);
-    line-height: clamp(var(--min-size) * 0.1px, var(--font-size), var(--max-size) * 0.35px);
-    text-shadow: #fcf2ed 1px 1px 0px;
-    flex: 3 0 0;
-  }
+  h1.heading {
+    line-height: 0.9;
+}
   .hero-icon{
     display: none;
   }
@@ -152,10 +171,6 @@ img{ width: 100%;}
   }
   .hero-subheading_main-md{
   display: block;
-  // --min-size: 32;
-  // --max-size: 56;
-  // --font-size: calc((var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  // font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 0.7px);
   height: auto;
   text-align: left;
   align-self: end;
@@ -164,10 +179,7 @@ img{ width: 100%;}
   .legend{
     text-align: left;
     align-self: end;
-    --min-size: 20;
-    --max-size: 56;
-    --font-size: calc((var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-    font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 0.55px);
+    font-size: calc(var(--fs-display) * 0.75);
   }
 }
 
@@ -178,92 +190,56 @@ img{ width: 100%;}
 
 /** Section_wedding **/
 #wedding {
-  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  padding: 1.5rem;
   img {
     display: block;
     margin: 0 auto;
     width: clamp(250px, 40vw , 350px );
   }
-  .caption{
-    padding: 0.75rem;
-    p{ 
-      margin-bottom: 0;
-      --min-size: 14;
-      --max-size: 20;
-      --font-size: calc(
-        (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-      font-size: clamp(  var(--min-size) * 1px,  var(--font-size),  var(--max-size) * 0.875px);
-    }
-    span{ 
-      padding: 1rem 1rem 0 1rem;
-      font-size: 0.875em;}
-  }
-}
-.newlywed{
-  padding: 0 0 0.75rem 0;
 }
 
-.newlywed-subhead{
-  --min-size: 28;
-  --max-size: 42;
-  --font-size: calc(
-    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(  var(--min-size) * 1px,  var(--font-size),  var(--max-size) * 1px);
+h2.section-title{
+  font-size: var(--fs-h2);
+  margin-bottom: 0;
 }
+
 .name{
-  --min-size: 21;
-  --max-size: 48;
-  --font-size: calc(
-    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(  var(--min-size) * 1px,  var(--font-size),  var(--max-size) * 1px);
-  }
-.host{
-  --min-size: 15;
-  --max-size: 24;
-  --font-size: calc(
-    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(  var(--min-size) * 1px,  var(--font-size),  var(--max-size) * 1px);
+  font-size: calc(var(--fs-p) * var(--ratio-step-1));
+}
+
+.host, .caption p, .gallery p{
+  font-size: var(--fs-sm) ;
 }
 
 .caption{
   padding: 0.75rem;
-  p{ margin-bottom: 0;}
+  p{ 
+    margin-bottom: 0;
+  }
   span{ 
     padding: 1rem 1rem 0 1rem;
     font-size: 0.875em;}
 }
 
-
 @media (min-width: 768px){
-  .name{
-    font-size: 2rem;
+  #wedding{
+    padding: 2.5rem;
   }
-  .host{
-    font-size: 1.5rem;
+  .caption{
+    padding: 2rem;
   }
 }
+
+
 
 
 /** Section_gallery **/
 .gallery {
   padding: 1.5rem;
   align-items: end;
-  --min-size: 12;
-  --max-size: 20;
-  --font-size: calc(
-    (var(--min-size) * 0.875px) + (var(--max-size) - var(--min-size)) *
-      ((100cqw - 320px) / (1920 - 320))
-  );
-  font-size: clamp(
-    var(--min-size) * 0.875px,
-    var(--font-size),
-    var(--max-size) * 1px
-  );
-  line-height: clamp(
-    var(--min-size) * 1.5px,
-    var(--font-size) * 1.75px,
-    var(--max-size) * 1px
-  );
+  p{
+    line-height: 1.2;
+  }
   .row{ position: relative;}
   .photo-background{
     img{
@@ -277,73 +253,108 @@ img{ width: 100%;}
     display: block;
     }
   }
-  .primary-font_td{
-  font-size:0.85em;}
+}
+.vstack{
+  align-self: center;
+}
+
+.footer{
+  padding: 1.5rem 0;
+  p{
+    font-size: calc( var(--fs-sm) * var(--ratio-step--4));
+    line-height: 1.3;
+    margin-bottom: 0;
+  }
+  .col-12 .primary-font_en{
+    font-size: 1.25em;
+  }
 }
 
 
+@media (min-width: 768px){
+  .caption, .gallery{
+    p{
+    font-size: calc(var(--fs-sm) * var(--ratio-step-0));
+    line-height: 1.5;
+    }
+    .footer p{
+      font-size: calc( var(--fs-sm) * var(--ratio-step--1));
+      line-height: 1.5;
+    }
+  }
+}
+
+
+
+
 #when{
-  padding: 3.5rem 1.5rem 4rem 1.5rem;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
   p{
-  //字體
-  --min-size: 16;
-  --max-size: 24;
-  --font-size: calc(
-    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(  var(--min-size) * 1px,  var(--font-size),  var(--max-size) * 1px);  
+    font-size: var(--fs-p);
+    span{
+      font-size: 0.75em;
+    }
+    span.logotype_en{
+      font-size: 1.125em;
+    }
   }
 }
 
 .date {
-  //字體
-  --min-size: 48;
-  --max-size: 80;
-  --font-size: calc(
-    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(  var(--min-size) * 0.75px,  var(--font-size),  var(--max-size) * 1.25px);  
-  line-height:calc(
-    (var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+  font-size: var(--fs-h1);  
+  line-height:0.875;
 }
 
 .year{
- //字體
-  --min-size: 24;
-  --max-size: 60;
-  --font-size: calc(
-    (var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(  var(--min-size) * 1px,  var(--font-size),  var(--max-size) * 1.5px);
+  font-size: calc( var(--fs-h2) * var(--ratio-step-2));
 }
+
+.calendar{
+    width: clamp(320px , 320px + (620 - 320) * var(--fluid-calc), 620px);
+    margin: 0 auto;
+  }
 
 .rundown-icon{
   margin: 0 auto;
 }
 .time {
-  font-size: 2rem;
+  font-size: calc( var(--fs-h2) * var(--ratio-step-2));
   line-height: 1rem;
   span{ font-size: 0.5em;}
   padding: 1.25rem 0 0.875rem 0;
 }
-.site{  font-size: clamp(0.875rem , 0.875rem + 0.5vw , 1.5rem);}
-.activity{  font-size: clamp(1rem , 1rem + 0.5vw , 2.5rem);}
+.site{  
+  font-size: var(--fs-sm);
+}
+.activity{  
+  font-size: calc( var(--fs-p) * var(--ratio-step-1));
+}
 
-#venue{padding: 3.5rem 1.5rem 0 1.5rem;}
+#venue{
+  padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+  p{
+    font-size: var(--fs-sm) ;
+  }
+}
 
 .venue-name{
-  //字體
-  --min-size: 42;
-  --max-size: 120;
-  --font-size: calc(
-    (var(--min-size) * 0.25px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(  var(--min-size) * 0.8px,  var(--font-size),  var(--max-size) * 1.5px);  
+  font-size: calc(var(--fs-h2) * var(--ratio-step-2));  
   p{  margin-bottom: 0;}
 }
 
-.map{
-  width: clamp{};
-}
-
-
 @media (min-width: 768px){
+  #when{
+  p{
+    padding-top: 1rem;
+    font-size: var(--fs-sm);
+    span{
+      font-size: 0.75em;
+    }
+    span.logotype_en{
+      font-size: 1.125em;
+    }
+  }
+}
   .calendar{
     width: 50%;
     margin: 0 auto;
@@ -358,7 +369,7 @@ img{ width: 100%;}
       .col-md-12{
         display: flex;
         flex-direction: row;
-        padding: 1.5rem 0;
+        padding: 1rem 0 0 0;
       }
     }
   }
@@ -366,21 +377,15 @@ img{ width: 100%;}
   width: 65%;;
   }
   .time {
-  font-size: 2rem;
-  line-height: 1rem;
+  font-size: 2.5rem;
+  line-height: 1.1;
   span{ font-size: 0.5em;}
-  padding: 1.25rem 0 0 0;
+  padding: 0;
   }
-  .site{  font-size: clamp(1rem , 1rem + 0.5vw , 1.2rem);}
-  .activity{  font-size: clamp(1rem , 1rem + 1.25vw , 1.5rem);}
+  // .site{  font-size: clamp(1rem , 1rem + 0.5vw , 1.2rem);}
+  .activity{  font-size: 1.75rem;}
   .venue-name{
-    //字體
-    --min-size: 28;
-    --max-size: 60;
-    --font-size: calc(
-      (var(--min-size) * 0.25px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-    font-size: clamp(  var(--min-size) * 0.8px,  var(--font-size),  var(--max-size) * 1.5px);  
-    p{  margin-bottom: 0;}
+  font-size: calc(var(--fs-h2) * var(--ratio-step-4)); 
   }
   .map{width: 100%;}
 }

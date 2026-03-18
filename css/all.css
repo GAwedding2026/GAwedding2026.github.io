@@ -19,6 +19,27 @@
 }
 
 /** 字體大小 **/
+:root {
+  --min-vw: 320;
+  --max-view: 1440;
+  --fluid-calc: calc((100vw - var(--min-vw) * 1px) / (var(--max-view) - var(--min-vw)));
+  --fs-h1: clamp(56px, 56px + (80 - 56) * var(--fluid-calc), 80px);
+  --fs-display: clamp(25px, 25px + (42 - 25) * var(--fluid-calc), 42px);
+  --fs-h2: clamp(24px, 24px + (36 - 24) * var(--fluid-calc), 36px);
+  --fs-p: clamp(16px, 16px + (32 - 16) * var(--fluid-calc), 32px);
+  --fs-sm: clamp(14px, 14px + (20 - 12) * var(--fluid-calc), 20px);
+  --ratio-step--4: 0.65;
+  --ratio-step--3: 0.75;
+  --ratio-step--2: 0.875;
+  --ratio-step--1: 0.875;
+  --ratio-step-0: 1.125;
+  --ratio-step-1: 1.25;
+  --ratio-step-2: 1.3;
+  --ratio-step-3: 1.5;
+  --ratio-step-4: 1.75;
+  --ratio-step-5: 2;
+}
+
 .fs-7 {
   font-size: 0.45em;
 }
@@ -36,7 +57,7 @@
   color: #974315;
 }
 
-.newlywed-subhead, #rundown, #wedding p {
+h2, #wedding p, #rundown {
   color: #778899;
 }
 
@@ -44,7 +65,7 @@
   background-color: #fcf2ed;
 }
 
-.text-color {
+.gallery p {
   color: #9a875f;
 }
 
@@ -108,7 +129,7 @@ img {
   padding: 1.5rem;
 }
 #hero .banner {
-  padding-top: 5.25rem;
+  padding-top: 5.875rem;
 }
 #hero .banner img {
   display: block;
@@ -123,21 +144,18 @@ img {
 .hero-title_heading {
   display: flex;
   position: absolute;
-  top: 4vh;
+  top: 26px;
   margin-left: 0;
   margin-right: 0;
 }
 
-.heading {
-  --min-size: 80;
-  --max-size: 120;
-  --font-size: calc((var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((80cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 0.7px, var(--font-size), var(--max-size) * 5px);
-  line-height: clamp(var(--min-size) * 0.7px, var(--font-size), var(--max-size) * 1px);
+h1.heading {
+  font-size: var(--fs-h1);
+  line-height: 1;
   text-shadow: #fcf2ed 1px 1px 0px;
   flex: 3 0 0;
 }
-.heading span {
+h1.heading span {
   font-size: 0.35em;
 }
 
@@ -149,11 +167,8 @@ img {
 }
 
 .hero-subheading {
-  --min-size: 25;
-  --max-size: 100;
-  --font-size: calc((var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 0.4px);
-  line-height: clamp(var(--min-size) * 1.75px, var(--font-size), var(--max-size) * 0.25px);
+  font-size: var(--fs-display);
+  line-height: 1.4;
   text-align: center;
 }
 
@@ -185,14 +200,8 @@ img {
     position: absolute;
     top: 8vh;
   }
-  .heading {
-    --min-size: 100;
-    --max-size: 150;
-    --font-size: calc((var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((80cqw - 320px) / (1920 - 320)));
-    font-size: clamp(var(--min-size) * 0.7px, var(--font-size), var(--max-size) * 5px);
-    line-height: clamp(var(--min-size) * 0.1px, var(--font-size), var(--max-size) * 0.35px);
-    text-shadow: #fcf2ed 1px 1px 0px;
-    flex: 3 0 0;
+  h1.heading {
+    line-height: 0.9;
   }
   .hero-icon {
     display: none;
@@ -213,63 +222,30 @@ img {
   .legend {
     text-align: left;
     align-self: end;
-    --min-size: 20;
-    --max-size: 56;
-    --font-size: calc((var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-    font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 0.55px);
+    font-size: calc(var(--fs-display) * 0.75);
   }
 }
 /** Section_wedding **/
 #wedding {
-  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  padding: 1.5rem;
 }
 #wedding img {
   display: block;
   margin: 0 auto;
   width: clamp(250px, 40vw, 350px);
 }
-#wedding .caption {
-  padding: 0.75rem;
-}
-#wedding .caption p {
+
+h2.section-title {
+  font-size: var(--fs-h2);
   margin-bottom: 0;
-  --min-size: 14;
-  --max-size: 20;
-  --font-size: calc(
-    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 0.875px);
-}
-#wedding .caption span {
-  padding: 1rem 1rem 0 1rem;
-  font-size: 0.875em;
-}
-
-.newlywed {
-  padding: 0 0 0.75rem 0;
-}
-
-.newlywed-subhead {
-  --min-size: 28;
-  --max-size: 42;
-  --font-size: calc(
-    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
 }
 
 .name {
-  --min-size: 21;
-  --max-size: 48;
-  --font-size: calc(
-    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+  font-size: calc(var(--fs-p) * var(--ratio-step-1));
 }
 
-.host {
-  --min-size: 15;
-  --max-size: 24;
-  --font-size: calc(
-    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+.host, .caption p, .gallery p {
+  font-size: var(--fs-sm);
 }
 
 .caption {
@@ -284,25 +260,20 @@ img {
 }
 
 @media (min-width: 768px) {
-  .name {
-    font-size: 2rem;
+  #wedding {
+    padding: 2.5rem;
   }
-  .host {
-    font-size: 1.5rem;
+  .caption {
+    padding: 2rem;
   }
 }
 /** Section_gallery **/
 .gallery {
   padding: 1.5rem;
   align-items: end;
-  --min-size: 12;
-  --max-size: 20;
-  --font-size: calc(
-    (var(--min-size) * 0.875px) + (var(--max-size) - var(--min-size)) *
-      ((100cqw - 320px) / (1920 - 320))
-  );
-  font-size: clamp(var(--min-size) * 0.875px, var(--font-size), var(--max-size) * 1px);
-  line-height: clamp(var(--min-size) * 1.5px, var(--font-size) * 1.75px, var(--max-size) * 1px);
+}
+.gallery p {
+  line-height: 1.2;
 }
 .gallery .row {
   position: relative;
@@ -315,42 +286,58 @@ img {
   border: #974315 5px solid;
   display: block;
 }
-<<<<<<< HEAD
-.gallery .primary-font_td {
-  font-size: 0.85em;
+
+.vstack {
+  align-self: center;
 }
-=======
-.gallery .primary-font_td{
-  font-size:0.85em;}
 
->>>>>>> b9aeea2bf652097185e5f0cbe0d3103741711b01
+.footer {
+  padding: 1.5rem 0;
+}
+.footer p {
+  font-size: calc(var(--fs-sm) * var(--ratio-step--4));
+  line-height: 1.3;
+  margin-bottom: 0;
+}
+.footer .col-12 .primary-font_en {
+  font-size: 1.25em;
+}
 
+@media (min-width: 768px) {
+  .caption p, .gallery p {
+    font-size: calc(var(--fs-sm) * var(--ratio-step-0));
+    line-height: 1.5;
+  }
+  .caption .footer p, .gallery .footer p {
+    font-size: calc(var(--fs-sm) * var(--ratio-step--1));
+    line-height: 1.5;
+  }
+}
 #when {
-  padding: 3.5rem 1.5rem 4rem 1.5rem;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
 }
 #when p {
-  --min-size: 16;
-  --max-size: 24;
-  --font-size: calc(
-    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+  font-size: var(--fs-p);
+}
+#when p span {
+  font-size: 0.75em;
+}
+#when p span.logotype_en {
+  font-size: 1.125em;
 }
 
 .date {
-  --min-size: 48;
-  --max-size: 80;
-  --font-size: calc(
-    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 0.75px, var(--font-size), var(--max-size) * 1.25px);
-  line-height: calc(var(--min-size) * 0.5px + (var(--max-size) - var(--min-size)) * (100cqw - 320px) / 1600);
+  font-size: var(--fs-h1);
+  line-height: 0.875;
 }
 
 .year {
-  --min-size: 24;
-  --max-size: 60;
-  --font-size: calc(
-    (var(--min-size) * 0.5px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1.5px);
+  font-size: calc(var(--fs-h2) * var(--ratio-step-2));
+}
+
+.calendar {
+  width: clamp(320px, 320px + 300 * var(--fluid-calc), 620px);
+  margin: 0 auto;
 }
 
 .rundown-icon {
@@ -358,7 +345,7 @@ img {
 }
 
 .time {
-  font-size: 2rem;
+  font-size: calc(var(--fs-h2) * var(--ratio-step-2));
   line-height: 1rem;
 }
 .time span {
@@ -369,33 +356,38 @@ img {
 }
 
 .site {
-  font-size: clamp(0.875rem, 0.875rem + 0.5vw, 1.5rem);
+  font-size: var(--fs-sm);
 }
 
 .activity {
-  font-size: clamp(1rem, 1rem + 0.5vw, 2.5rem);
+  font-size: calc(var(--fs-p) * var(--ratio-step-1));
 }
 
 #venue {
-  padding: 3.5rem 1.5rem 0 1.5rem;
+  padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+}
+#venue p {
+  font-size: var(--fs-sm);
 }
 
 .venue-name {
-  --min-size: 42;
-  --max-size: 120;
-  --font-size: calc(
-    (var(--min-size) * 0.25px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-  font-size: clamp(var(--min-size) * 0.8px, var(--font-size), var(--max-size) * 1.5px);
+  font-size: calc(var(--fs-h2) * var(--ratio-step-2));
 }
 .venue-name p {
   margin-bottom: 0;
 }
 
-.map {
-  width: clamp;
-}
-
 @media (min-width: 768px) {
+  #when p {
+    padding-top: 1rem;
+    font-size: var(--fs-sm);
+  }
+  #when p span {
+    font-size: 0.75em;
+  }
+  #when p span.logotype_en {
+    font-size: 1.125em;
+  }
   .calendar {
     width: 50%;
     margin: 0 auto;
@@ -411,36 +403,26 @@ img {
   #rundown .row .col-md-12 {
     display: flex;
     flex-direction: row;
-    padding: 1.5rem 0;
+    padding: 1rem 0 0 0;
   }
   .rundown-icon {
     width: 65%;
   }
   .time {
-    font-size: 2rem;
-    line-height: 1rem;
+    font-size: 2.5rem;
+    line-height: 1.1;
   }
   .time span {
     font-size: 0.5em;
   }
   .time {
-    padding: 1.25rem 0 0 0;
-  }
-  .site {
-    font-size: clamp(1rem, 1rem + 0.5vw, 1.2rem);
+    padding: 0;
   }
   .activity {
-    font-size: clamp(1rem, 1rem + 1.25vw, 1.5rem);
+    font-size: 1.75rem;
   }
   .venue-name {
-    --min-size: 28;
-    --max-size: 60;
-    --font-size: calc(
-      (var(--min-size) * 0.25px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
-    font-size: clamp(var(--min-size) * 0.8px, var(--font-size), var(--max-size) * 1.5px);
-  }
-  .venue-name p {
-    margin-bottom: 0;
+    font-size: calc(var(--fs-h2) * var(--ratio-step-4));
   }
   .map {
     width: 100%;
