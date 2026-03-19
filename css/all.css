@@ -295,8 +295,8 @@ h2.section-title {
   padding: 1.5rem 0;
 }
 .footer p {
-  font-size: calc(var(--fs-sm) * var(--ratio-step--4));
-  line-height: 1.3;
+  font-size: calc(var(--fs-sm) * var(--ratio-step--3));
+  line-height: 1.4;
   margin-bottom: 0;
 }
 .footer .col-12 .primary-font_en {
@@ -305,14 +305,19 @@ h2.section-title {
 
 @media (min-width: 768px) {
   .caption p, .gallery p {
-    font-size: calc(var(--fs-sm) * var(--ratio-step-0));
-    line-height: 1.5;
-  }
-  .caption .footer p, .gallery .footer p {
     font-size: calc(var(--fs-sm) * var(--ratio-step--1));
     line-height: 1.5;
   }
+  .caption .footer p.primary-font_td, .gallery .footer p.primary-font_td {
+    font-size: calc(var(--fs-sm) * var(--ratio-step--2));
+    line-height: 1.8;
+  }
+  .caption .footer p.primary-font_td span, .gallery .footer p.primary-font_td span {
+    font-size: calc(var(--fs-sm) * var(--ratio-step--0));
+    line-height: 1;
+  }
 }
+/** Section_When **/
 #when {
   padding: 2.5rem 1.5rem 1.5rem 1.5rem;
 }
@@ -363,20 +368,6 @@ h2.section-title {
   font-size: calc(var(--fs-p) * var(--ratio-step-1));
 }
 
-#venue {
-  padding: 2.5rem 1.5rem 2.5rem 1.5rem;
-}
-#venue p {
-  font-size: var(--fs-sm);
-}
-
-.venue-name {
-  font-size: calc(var(--fs-h2) * var(--ratio-step-2));
-}
-.venue-name p {
-  margin-bottom: 0;
-}
-
 @media (min-width: 768px) {
   #when p {
     padding-top: 1rem;
@@ -421,6 +412,22 @@ h2.section-title {
   .activity {
     font-size: 1.75rem;
   }
+}
+#venue {
+  padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+}
+#venue p {
+  font-size: var(--fs-sm);
+}
+
+.venue-name {
+  font-size: calc(var(--fs-h2) * var(--ratio-step-2));
+}
+.venue-name p {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
   .venue-name {
     font-size: calc(var(--fs-h2) * var(--ratio-step-4));
   }
