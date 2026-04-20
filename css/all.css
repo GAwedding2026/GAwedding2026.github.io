@@ -325,10 +325,33 @@ h2.section-title {
   font-size: var(--fs-p);
 }
 #when p span {
-  font-size: 0.75em;
+  font-size: 0.85em;
 }
 #when p span.logotype_en {
   font-size: 1.125em;
+}
+#when p .btn {
+  background: #974315;
+  border: #974315 solid 1px;
+  border-radius: 0.5rem;
+  color: #fcf2ed;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  line-height: 30px;
+  font-size: 1rem;
+  margin: 1rem auto;
+  padding: 0.5rem;
+}
+#when p a:hover {
+  background: #778899;
+  border: #778899 solid 1px;
+  border-radius: 0.5rem;
+  border: none;
+  color: #fcf2ed;
+  line-height: 30px;
+  font-size: 1.125rem;
+  transition: 0.5s;
 }
 
 .date {
