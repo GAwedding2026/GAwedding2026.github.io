@@ -355,7 +355,6 @@ a.btn:hover {
   color: #fcf2ed;
   line-height: 30px;
   font-weight: bold;
-  width: 100%;
 }
 
 .date {
@@ -441,9 +440,6 @@ a.btn:hover {
   }
   a.btn{
     width:80%;
-  }
-  a.btn:hover{
-    width:100%;
   }
 }
 #venue {
