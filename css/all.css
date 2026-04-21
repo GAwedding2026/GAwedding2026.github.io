@@ -334,7 +334,7 @@ h2.section-title {
 a.btn {
   background: #f8B026;
   border: #f8B026 solid 1px;
-  color: #fcf2ed;
+  color: #974315;
   display: block;
   border-radius: 0.5rem;
   text-decoration: none;
@@ -352,7 +352,7 @@ a.btn {
 a.btn:hover {
   background: #CA4613;
   border: #CA4613 solid 1px;
-  color: #974315;
+  color: #fcf2ed;
   line-height: 30px;
   font-weight: bold;
 }
@@ -438,9 +438,9 @@ a.btn:hover {
   .activity {
     font-size: 1.75rem;
   }
-  a.btn{
+  /* a.btn{
     width:80%;
-  }
+  } */
 }
 #venue {
   padding: 2.5rem 1.5rem 2.5rem 1.5rem;
