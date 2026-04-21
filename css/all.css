@@ -341,7 +341,7 @@ a.btn {
   text-align: center;
   line-height: 30px;
   height: 50px;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   margin: 0 auto;
   padding: 0.5rem;
   letter-spacing: 2px;
@@ -354,7 +354,6 @@ a.btn:hover {
   border: #CA4613 solid 1px;
   color: #fcf2ed;
   line-height: 30px;
-  font-weight: bold;
 }
 
 .date {
