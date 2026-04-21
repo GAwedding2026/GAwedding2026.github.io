@@ -6,7 +6,7 @@
   font-family: "Cinzel Decorative", "Libre Caslon Display", "Italiana", sans-serif;
 }
 
-.primary-font_td {
+.primary-font_td, a.btn {
   font-family: "Shippori Mincho B1", serif;
 }
 
@@ -438,6 +438,12 @@ a.btn:hover {
   }
   .activity {
     font-size: 1.75rem;
+  }
+  a.btn{
+    width:50%;
+  }
+  a.btn:hover{
+    width:100%;
   }
 }
 #venue {
