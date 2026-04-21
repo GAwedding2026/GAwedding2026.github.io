@@ -307,8 +307,8 @@ h2.section-title{
 }
 
  a.btn{
-  background: #9a875f;
-  border: #9a875f solid 1px;
+  background: #7E1813;
+  border: #7E1813 solid 1px;
   color: #fcf2ed;
   display: block;
   border-radius: 0.5rem;
@@ -320,7 +320,8 @@ h2.section-title{
   margin: 0 auto;
   padding: 0.5rem;
   letter-spacing: 2px;
-  width: 50%;
+  width: 50%;  
+  transition: all 0.3s ease-in-out;
   }
   
   a.btn:hover{
@@ -329,7 +330,6 @@ h2.section-title{
     color: #fcf2ed;
   line-height: 30px;
   font-weight: bold;
-  transition: 0.25s;
   width: 100%;
   }
     
