@@ -330,28 +330,32 @@ h2.section-title {
 #when p span.logotype_en {
   font-size: 1.125em;
 }
-#when p .btn {
-  background: #974315;
-  border: #974315 solid 1px;
-  border-radius: 0.5rem;
+
+a.btn {
+  background: #9a875f;
+  border: #9a875f solid 1px;
   color: #fcf2ed;
+  display: block;
+  border-radius: 0.5rem;
   text-decoration: none;
   text-align: center;
-  display: block;
   line-height: 30px;
-  font-size: 1rem;
-  margin: 1rem auto;
+  height: 50px;
+  font-size: 1.25rem;
+  margin: 0 auto;
   padding: 0.5rem;
+  letter-spacing: 2px;
+  width: 50%;
 }
-#when p a:hover {
+
+a.btn:hover {
   background: #778899;
   border: #778899 solid 1px;
-  border-radius: 0.5rem;
-  border: none;
   color: #fcf2ed;
   line-height: 30px;
-  font-size: 1.125rem;
-  transition: 0.5s;
+  font-weight: bold;
+  transition: 0.25s;
+  width: 100%;
 }
 
 .date {
