@@ -332,8 +332,8 @@ h2.section-title {
 }
 
 a.btn {
-  background: #072a49;
-  border: #072a49 solid 1px;
+  background: #f8B026;
+  border: #f8B026 solid 1px;
   color: #fcf2ed;
   display: block;
   border-radius: 0.5rem;
@@ -350,9 +350,9 @@ a.btn {
 }
 
 a.btn:hover {
-  background: #778899;
-  border: #778899 solid 1px;
-  color: #fcf2ed;
+  background: #CA4613;
+  border: #CA4613 solid 1px;
+  color: #974315;
   line-height: 30px;
   font-weight: bold;
 }
