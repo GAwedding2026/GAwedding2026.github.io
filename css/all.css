@@ -332,8 +332,8 @@ h2.section-title {
 }
 
 a.btn {
-  background: #7E1813;
-  border: #7E1813 solid 1px;
+  background: #d2850b;
+  border: #d2850b solid 1px;
   color: #fcf2ed;
   display: block;
   border-radius: 0.5rem;
@@ -440,7 +440,7 @@ a.btn:hover {
     font-size: 1.75rem;
   }
   a.btn{
-    width:50%;
+    width:80%;
   }
   a.btn:hover{
     width:100%;
